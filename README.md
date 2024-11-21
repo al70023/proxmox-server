@@ -1,5 +1,6 @@
 # Getting Started
-* If using laptop, make sure to disable sleep on lid close before any install.  
+* If using laptop, make sure to disable sleep on lid close before any install.
+* Before installation, set Virtualization and IOMMU (PCIE passthrough) on in BIOS settings
 * Backup any data that may be lost.  
 * Run benchmarks for CPU, check NIC max throughput, and check network speeds.
 
