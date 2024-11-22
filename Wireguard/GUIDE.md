@@ -7,6 +7,7 @@ This setup requires using a Dynamic DNS service, to have a public address for yo
 * [Proxmox Helper Scripts - Wireguard LXC](https://tteck.github.io/Proxmox/#wireguard-lxc)
 * [Barmine Tech - Wireguard LXC Container Setup](https://www.youtube.com/watch?v=mXpoGu0xyGA&t=352s)
 * [Barmine Tech - Updated Wireguard LXC Container](https://www.youtube.com/watch?v=hF9QQiqYRDI)
+* [The $0 Home Server](https://youtu.be/IuRWqzfX1ik?si=pfoNZxvBvQwZNPMw&t=508)
 
 
 ## Duck DNS Setup:
@@ -33,9 +34,41 @@ Make sure to select the IP of your server as the LAN IP Address, 51820 as the po
    
 ## Container Setup:  
 
+*Note: These settings are automatically configured using the helper script install.  
+
+|               |               |
+| ------------- | ------------- |
+| Disk Size     | 4 GiB  |
+| CPU Cores     | 1  |  
+| Memory        | 512 MiB   |
+| Swap          | 512 MiB   |  
+| IPv4          | 192.168.1.3/24 (static)  |
+| DNS           | Host   |   
 
 
-**To test Wireguard VPN's functionality:** 
+## WGDashboard Configuration:
+
+Upon first login, the web GUI will take `admin` as the username and password. You can change this after by creating an account.  
+
+Once logged in, go to Settings, and ensure DNS is set to your local DNS for both IPv4 and v6. Then change the Peer Remote Endpoint to the Duck DNS domain name pointing to your public IP.  
+
+To create a new tunnel, go Home and create a new one using the plus button.  
+
+Input the listen port that is the one forwarded in your router settings (51820).  
+
+For IP Address/CIDR, use any local IP address that is not in the range of your machines on the network. If your machines are on `192.168.1.1` and up, choose something like `192.168.100.x/24` or `10.0.0.1/24`.  
+
+Once saved, create a new Peer with a `/32` in the range specified for the tunnel.  
+
+If full tunnel connection, Endpoint Allowed IPs should be `0.0.0.0/0, ::/0`.  
+
+Otherwise, if split tunnel to home network, enter your IPv4 and IPv6 addresses, such as `192.168.1.0/24, xxxx:xxxx:xxxx:xxxx::/64`.  
+
+Create the peer, and connect a device using the configuration.  
+
+
+
+## Test Wireguard VPN's Functionality:
 * Set up a client, such as a smartphone or PC, with the Wireguard configuration.
 * Make sure you are not connected to the home network.
 * Browse the internet, and try accessing an internal service, such as one on the `192.168` network. You should be able to access it, and see the requests in AdGuard Home, as the VPN uses the local DNS.
