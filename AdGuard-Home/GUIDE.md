@@ -29,3 +29,11 @@ Once the container is spun up, navigate to `x.x.x.x:3000` to log in, where `x.x.
 * Ensure web browser is not using its own DNS server settings (close and reopen browser after making changes)  
 
 Any requests to AdGuard that come from the host, such as `dig` or VPN connections, will show up in the AdGuard query logs under the IP address of the macvlan interface.  
+
+***Note:** 
+* AdGuard Home will stop YouTube history from working properly on mobile. To fix this, add this line to Custom Filtering Rules:
+    
+  ```
+  @@||s.youtube.com^$important
+  ```
+
