@@ -43,6 +43,7 @@ Click the `Updates ` tab and hit "refresh".
 
 Finally, hit the "Upgrade" button.  
 
+
 ### 2. Set Trusted TLS Certificate
 
 This will require a valid domain name through a provider like DuckDNS or Cloudflare, linked to the internal IP address of the proxmox host.  
