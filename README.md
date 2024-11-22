@@ -69,3 +69,18 @@ Choose your duckdns account for "Using account", then click "Order Certificates 
 After reloading and navigating to [YOUR-SELECTED-DOMAIN]:8006 you should see your proxmomx web GUI, trusted by the browser now.  
 
 
+
+# LXC Containers
+
+## 1. AdGuard Home DNS  
+
+This will be a local DNS Server with blocklists and an upstream resolver.   
+
+All setup can be found [here](AdGuard-Home/GUIDE.md).  
+
+
+## 2. Wireguard VPN Tunnel  
+
+This will allow securely tunneling into the host machine from any external client not on the same home network.  
+
+All setup can be found [here](Wireguard/GUIDE.md).   
