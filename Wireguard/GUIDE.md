@@ -1,17 +1,12 @@
 # Wireguard VPN Tunnel
 
-This docker container exposes ports 51820/udp, and 51821/tcp (Web GUI).  
-
 This setup requires using a Dynamic DNS service, to have a public address for your home network to point the VPN to. This will also require port forwarding 51820 on your home network router to the host IP address, so requests can reach your server running Wireguard.  
-  
-Once the container is spun up, navigate to `x.x.x.x:51821` to log in, where `x.x.x.x` is the IP address specified in the configuration file.   
-
-Later, once Nginx Proxy Manager is configured, go back and remove the line that exposes port 51821, as the web GUI will only be accessible through the Proxy. Also, you will remove the default network created with this container, and instead attach this to the Nginx proxy docker network.  
 
 
 ## Resources:
 * [Proxmox Helper Scripts - Wireguard LXC](https://tteck.github.io/Proxmox/#wireguard-lxc)
-* 
+* [Barmine Tech - Wireguard LXC Container Setup](https://www.youtube.com/watch?v=mXpoGu0xyGA&t=352s)
+* [Barmine Tech - Updated Wireguard LXC Container](https://www.youtube.com/watch?v=hF9QQiqYRDI)
 
 
 ## Duck DNS Setup:
@@ -35,43 +30,10 @@ In order for Wireguard to work, you will need to forward port 51820 in your rout
 
 Make sure to select the IP of your server as the LAN IP Address, 51820 as the port on both WAN and LAN and use UDP as the protocol.  
 
-***Note:**  
-* If you configured the `docker_bridge` macvlan interface in the AdGuard Home DNS setup, your router might be confusing your host server's internal IP with the IP of that virtual interface.
-* If you are not able to select your server's IP address in your router settings to port forward, and it is only selecting the maclvan interface IP address, then temporarily disable that virtual interface:
-
-  ```
-  sudo ip link set docker_bridge down
-  ```
-
-* You can test that this worked by running `sudo networkctl` and seeing the interface is down. Pinging the AdGuard Home IP address should ensure that the interface is down.  
-
-* Now, you may set up the port forwarding on your router to the host server, and then bring the interface back up:  
-
-  ```
-  sudo ip link set docker_bridge up
-  ```
-
-* Confirm it is up again by inspecting the output of `sudo networkctl` and pinging the AdGuard Home IP address once more.  
-
    
-## Docker Setup:  
+## Container Setup:  
 
-Create a new directory for the service:
 
-  ```
-  mkdir /opt/wireguard
-  ```  
-
-Change into the `/opt/wireguard` directory, and create a new docker compose file for the service:
-
-  ```
-  sudo touch docker-compose.yml
-  sudo nano docker-compose.yml 
-  ```
-
-Use [the attached configuration file](docker-compose.yml), paste it into the `docker-compose.yml`, and save it.  
-
-Now spin up the container with `docker compose up -d`, and on any device on the home network, navigate to the web GUI on your browser at `[IP-ADDRESS]:51821` to log in.  
 
 **To test Wireguard VPN's functionality:** 
 * Set up a client, such as a smartphone or PC, with the Wireguard configuration.
