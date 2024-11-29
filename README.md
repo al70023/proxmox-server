@@ -9,6 +9,7 @@
 * [Christian Lempa - Proxmox Must Haves](https://www.youtube.com/watch?v=VAJWUZ3sTSI&t=1010s&pp=ygUIcHJveG1vbXg%3D)
 * [Jim's Garage - Proxmox Installation](https://www.youtube.com/watch?v=jNEjKdtMrZI&t=1014s&pp=ygUUcHJveG1vbXggamltcyBnYXJhZ2U%3D)
 * [Jim's Garage - Proxmox LXC](https://www.youtube.com/watch?v=xKhWRMj5Nrc&t=342s&pp=ygUUcHJveG1vbXggamltcyBnYXJhZ2U%3D)
+* [Changing Proxmox Host IP Address](https://www.servethehome.com/how-to-change-primary-proxmox-ve-ip-address/)
   
 
 ## Proxmox Virtual Environment Download
