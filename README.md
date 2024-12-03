@@ -85,3 +85,14 @@ All setup can be found [here](AdGuard-Home/GUIDE.md).
 This will allow securely tunneling into the host machine from any external client not on the same home network.  
 
 All setup can be found [here](Wireguard/GUIDE.md).   
+
+
+# Virtual Machines
+
+## 1. OPNsense Firewall and Router  
+
+This will be a full-scale home network router and firewall.  
+
+All setup can be found [here](OPNsense/GUIDE.md).  
+
+
