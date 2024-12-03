@@ -9,6 +9,7 @@
 * [Home Network Guy - Beginner's Guide to Set up a Full Network using OPNsense](https://www.youtube.com/watch?v=CXp0CgilMRA)
 ### Additional Configuration and Management
 * [Configuring a Management VLAN](https://www.youtube.com/watch?v=9hJyWaQ2x28)
+* [Home Network Guy - Isolating Networks in OPNsense](https://www.youtube.com/watch?v=TjXkWSjYqlM)
 * [pfSense Baseline Guide (doc)](https://nguvu.org/pfsense/pfsense-baseline-setup/)
 * [Home Network Guy - OPNsense Firewall Rule "Cheat Sheet"](https://homenetworkguy.com/how-to/firewall-rules-cheat-sheet/)
 * [OPNsense Documentation - Firewall Rules Examples](https://www.zenarmor.com/docs/network-security-tutorials/how-to-configure-opnsense-firewall-rules#opnsense-firewall-rules-examples)
