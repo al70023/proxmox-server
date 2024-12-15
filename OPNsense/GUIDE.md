@@ -15,6 +15,7 @@
 * [Home Network Guy - How to Configure VLANs in OPNsense](https://homenetworkguy.com/how-to/configure-vlans-opnsense/)
 * [Home Network Guy - DNS Configuration in OPNsense](https://homenetworkguy.com/how-to/confused-about-dns-configuration-in-opnsense/)
 * [Home Network Guy - Configure IPv6 in OPNsense](https://homenetworkguy.com/how-to/configure-ipv6-opnsense-with-isp-such-as-comcast-xfinity/)
+* [Home Network Guy - Configure Wireguard VPN in OPNsense](https://homenetworkguy.com/how-to/configure-wireguard-opnsense/)
 * [Home Network Guy - OPNsense Firewall Rule "Cheat Sheet"](https://homenetworkguy.com/how-to/firewall-rules-cheat-sheet/)
 * [pfSense Baseline Guide (doc)](https://nguvu.org/pfsense/pfsense-baseline-setup/)
 * [OPNsense Documentation - Firewall Rules Examples](https://www.zenarmor.com/docs/network-security-tutorials/how-to-configure-opnsense-firewall-rules#opnsense-firewall-rules-examples)
