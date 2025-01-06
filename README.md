@@ -97,11 +97,17 @@ All setup can be found [here](Wireguard/GUIDE.md).
 
 # Virtual Machines
 
-## 1. OPNsense Firewall and Router  
+## 1. OPNsense Firewall & Router  
 
 This will be a full-scale home network router and firewall.  
 
 All setup can be found [here](OPNsense/GUIDE.md).  
+
+## 2. Frigate Network Video Recorder
+
+This will be a completely self-hosted home CCTV surveillance/security system.  
+
+All setup can be found [here](Frigate/GUIDE.md).  
 
 
 
