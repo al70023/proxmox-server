@@ -1,8 +1,8 @@
 services:
   frigate:
     container_name: frigate
-    # privileged: true                                  # May be necessary for iGPU passthrough statistics
-    cap_add:                                            # Use this as alternative to running privileged mode
+    # privileged: true                                # May be necessary for iGPU passthrough statistics
+    cap_add:                                          # Use this as alternative to running privileged mode
       - SYS_ADMIN
     restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:stable
