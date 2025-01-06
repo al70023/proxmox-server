@@ -104,3 +104,7 @@ This will be a full-scale home network router and firewall.
 All setup can be found [here](OPNsense/GUIDE.md).  
 
 
+
+# Miscellaneous
+
+* [How to add disks to a Proxmox server](https://www.youtube.com/watch?v=tKD-dgSKBxU&t=181s)
