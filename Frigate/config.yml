@@ -1,0 +1,61 @@
+cameras:
+  amcrest_1: # <------ Name the camera
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:uZAxCPywCGbV8G@192.168.50.55/cam/realmonitor?channel=1&subtype=0  # <----- The stream you want to use for detection
+          roles:
+            - detect
+    detect:
+      enabled: True
+      width: 1920 # <---- update for your camera's resolution
+      height: 1080 # <---- update for your camera's resolution
+      fps: 20
+
+detectors:
+  coral_1:
+    type: edgetpu
+    device: pci:0
+
+objects:
+  track:
+    - person
+    - eye glasses
+    - cell phone
+    - laptop
+
+mqtt:
+  enabled: false
+
+ffmpeg:
+  hwaccel_args: preset-vaapi
+  #  - -hwaccel
+  #  - vaapi
+  #  - -hwaccel_device
+  #  - /dev/dri/renderD128
+  #  - -hwaccel_output_format
+  #  - yuv420p
+  # output_args:
+      # record: -f segment -segment_time 10 -segment_format mp4 -reset_timestamps 1 -strftime 1 -c:v copy -c:a aac
+
+snapshots:
+  enabled: false
+  # timestamp: true
+  # bounding_box: true
+  # retain:
+    # default: 30
+
+record:
+  enabled: false
+  # events:
+   # pre_capture: 5
+   # post_capture: 5
+   # retain:
+     # default: 30
+     # mode: active_objects
+   # objects:
+     # - person
+     # - bird
+     # - cat
+     # - dog
+version: 0.14
