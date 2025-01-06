@@ -72,11 +72,9 @@ After reloading and navigating to [YOUR-SELECTED-DOMAIN]:8006 you should see you
 
 ### 3. Reduce disk writes to preserve SSD lifespan
 
-* [Reddit - Proxmox high disk writes](https://www.reddit.com/r/Proxmox/comments/129dxw7/proxmox_high_disk_writes/)
-* [Reddit - Suggestions to decrease wearout of SSDs in Proxmox](https://www.reddit.com/r/Proxmox/comments/u129sw/suggestions_to_decreasing_wearout_of_ssds_in/)
-* [Reddit - Reduce wear on SSDs](https://www.reddit.com/r/Proxmox/comments/12gftf7/reduce_wear_on_ssds/)
-* [Proxmox Forum - Reducing rrdcached writes](https://forum.proxmox.com/threads/reducing-rrdcached-writes.64473/)
-* [Minimizing SSD wear through PVE configuration changes](https://www.reddit.com/r/Proxmox/comments/ncg2xo/minimizing_ssd_wear_through_pve_configuration/)  
+* [Reddit - Proxmox folder2ram versus log2ram](https://www.reddit.com/r/Proxmox/comments/129dxw7/proxmox_high_disk_writes/)
+* [Reddit - Proxmox folder2ram and journald configs](https://www.reddit.com/r/Proxmox/comments/12gftf7/reduce_wear_on_ssds/)
+* [Proxmox Forum - Reducing rrdcached writes](https://forum.proxmox.com/threads/reducing-rrdcached-writes.64473/) 
 
 
 # LXC Containers
