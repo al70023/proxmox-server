@@ -2,7 +2,7 @@
 
 This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/gp/product/B083G9KT4C?ie=UTF8&th=1&linkCode=sl1&tag=frigate0d-20&linkId=7462400a6ff3a326d7e0d0c7f6b93504&language=en_US&ref_=as_li_ss_tl)
 
-## Resources:
+## Resources
 ### Initial Setup:
 * [Jim's Garage - Frigate CCTV Install & Setup](https://www.youtube.com/watch?v=iO584g5c0DY&t=1220s)
 * [Frigate in Proxmox LXC - Unprivileged with Intel iGPU (11th gen), USB Coral and Network share](https://github.com/blakeblackshear/frigate/discussions/5773)
