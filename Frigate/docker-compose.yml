@@ -1,0 +1,29 @@
+services:
+  frigate:
+    container_name: frigate
+    # privileged: true                                  # May be necessary for iGPU passthrough statistics
+    cap_add:                                            # Use this as alternative to running privileged mode
+      - SYS_ADMIN
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:stable
+    shm_size: "64mb"                                  # Default shm size of 64MB is fine for setups with 2 cameras detecting at 720p
+    devices:
+      # - /dev/bus/usb:/dev/bus/usb                   # Passes the USB Coral, needs to be modified for other versions
+      - /dev/apex_0:/dev/apex_0                       # Passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
+      - /dev/dri/renderD128                           # For intel hwaccel, needs to be updated for your hardware
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/frigate/config.yml:/config/config.yml
+      - /opt/frigate/storage:/media/frigate
+      - type: tmpfs                                   # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      # - "8971:8971"       # Authenticated UI and API. Reverse proxies should use this port.
+      - "5000:5000"          # Internal unauthenticated access. Expose carefully.
+      - "8554:8554"          # RTSP feeds
+      - "8555:8555/tcp"      # WebRTC over tcp
+      - "8555:8555/udp"      # WebRTC over udp
+    environment:
+      FRIGATE_RTSP_PASSWORD: "password"
