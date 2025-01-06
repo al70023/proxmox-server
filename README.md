@@ -112,3 +112,4 @@ All setup can be found [here](Frigate/GUIDE.md).
 # Miscellaneous
 
 * [How to add disks to a Proxmox server](https://www.youtube.com/watch?v=tKD-dgSKBxU&t=181s)
+* [How to add an additional hard disk to a VM in Proxmox VE](https://www.youtube.com/watch?v=vI8myYHQgnA)
