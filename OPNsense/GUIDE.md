@@ -35,3 +35,13 @@ Build your IP blacklists (using aliases) with lists like Firehol, and block them
 Disable the default LAN to any allow rule and whitelist things you need manually.  
 
 Use crons to keep the lists up-to-date.  
+
+
+## Enable Chromecast over IoT VLAN
+
+1. Install mDNS Repeater plugin for OPNsense
+2. Enable and set listen interfaces (IoT and LAN)
+3. Create IoT firewall rule to allow Chromecast IP to reach IoT VLAN default gateway (the .1 address, i.e. `192.168.10.1`) for pings to work
+4. Create IoT firewall rule to allow IoT net to access LAN address on mDNS ports (319, 320, 5353)
+5. Create LAN firewall rule to allow LAN net on ports 32768:65000 to access Chromecast IP on ports 32768:65000 (UDP)
+6. Create LAN firewall rule to allow LAN net on ports 32768:65000 to access Chromecast IP on ports 8008, 8009, 8010, 8443 (TCP)
