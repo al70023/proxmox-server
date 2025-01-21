@@ -101,11 +101,19 @@ This will be a full-scale home network router and firewall.
 
 All setup can be found [here](OPNsense/GUIDE.md).  
 
+
 ## 2. Frigate Network Video Recorder
 
 This will be a completely self-hosted home CCTV surveillance/security system.  
 
 All setup can be found [here](Frigate/GUIDE.md).  
+
+
+## 3. OpenMediaVault Network Attached Storage
+
+This will be a virtualized self-hosted NAS solution, passing in a hard drive as the device to store on.  
+
+All setup can be found [here](OpenMediaVault/GUIDE.md).  
 
 
 
