@@ -1,13 +1,13 @@
 # OpenMediaVault Network Attached Storage
 
-This setup uses the
+This setup uses a physical hard disk passed through to the OMV VM as shown in the video and wiki guides. This will pass the entire disk as a SCSI device.
 
 ## Resources
 * [Installing Open Media Vault on Proxmox made EASY](https://www.youtube.com/watch?v=Bce7VT3kJ4g)
 * [Proxmox Wiki - Passthriugh Physical Disk to Virtual Machine](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
 
 
-## Resource/Hardware Setup:  
+## VM and Hardware Setup:  
 
 |               |               |
 | ------------- | ------------- |
@@ -17,3 +17,6 @@ This setup uses the
 | CPU Type      | Host  |  
 | Memory        | 4096 MiB  |
 | Network       | Default  |
+
+
+##  
