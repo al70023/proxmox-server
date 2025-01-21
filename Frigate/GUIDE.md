@@ -9,6 +9,7 @@ This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/g
 * [Frigate Official Wiki - Getting Started](https://docs.frigate.video/guides/getting_started)
 
 ### Device Passthroughs and Configurations:
-* [Linux Virtual Machine iGPU Passthrough Configuration](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/#linux-virtual-machine-igpu-passthrough-configuration)
 * [Coral TPU Driver Install for Linux](https://coral.ai/docs/m2/get-started/#requirements)
+* [/dev/apex_0 Not Found](https://github.com/google-coral/edgetpu/issues/407)
+* [Linux Virtual Machine iGPU Passthrough Configuration](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/#linux-virtual-machine-igpu-passthrough-configuration)
 * [Reddit - Frigate iGPU statistics](https://www.reddit.com/r/frigate_nvr/comments/1byj9pp/frigate_in_docker_in_unprivileged_lxc_has_no_igpu/)
