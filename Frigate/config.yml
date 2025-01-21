@@ -3,7 +3,7 @@ cameras:
     enabled: true
     ffmpeg:
       inputs:
-        - path: rtsp://admin:uZAxCPywCGbV8G@192.168.50.55/cam/realmonitor?channel=1&subtype=0  # <----- The stream you want to use for detection
+        - path: rtsp://[CAMERA WEB UI USERNAME]:[CAMERA WEB UI PASSWORD]@[CAMERA IP ADDRESS]/cam/realmonitor?channel=1&subtype=0  # <----- The stream you want to use for detection (this subpath works for this Amcrest Camera model
           roles:
             - detect
     detect:
