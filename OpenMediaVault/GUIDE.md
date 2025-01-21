@@ -85,6 +85,13 @@ Now, make sure to change the default password, install updates, and reboot the V
    mount [NFS SERVER IP ADDRESS]:/[NFS FOLDER NAME]
    ```
 
-You should now be able to reboot the machine and still see your mount permanently in the filesystem.  
+You should now be able to reboot the machine and still see your mount permanently in the filesystem.   
 
-   
+
+## File Permissions
+
+If you cannot write to the file share on the client, navigate to 'Shared Folders' under the 'Storage' section on the OMV web UI.  
+
+Select the file share and click the Access Control List (ACL) button.  
+
+Edit the configuration to apply permissions recursively, and change 'Others' to have Read/Write/Execute permissions.  
