@@ -4,8 +4,7 @@ This setup uses the
 
 ## Resources
 * [Installing Open Media Vault on Proxmox made EASY](https://www.youtube.com/watch?v=Bce7VT3kJ4g)
-* [Homelab NAS with OpenMediaVault on Proxmox](https://www.youtube.com/watch?v=gkihz5BJ0PQ)
-* [Proxmox Meets OpenMediaVault 7: The Ultimate NAS Setup!](https://www.youtube.com/watch?v=ivtKb_FMq50)
+* [Proxmox Wiki - Passthriugh Physical Disk to Virtual Machine](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
 
 
 ## Resource/Hardware Setup:  
