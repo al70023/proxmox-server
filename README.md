@@ -1,3 +1,10 @@
+# Overview
+
+High level network layout of my homelab. Updated as of Jaunary 22, 2025.
+
+<img width="1563" alt="Homelab-Network-Diagram" src="https://github.com/user-attachments/assets/f7933bd5-6aa1-43c9-b3c6-44739fcfc886" />
+
+
 # Getting Started
 * If using laptop, make sure to disable sleep on lid close before any install.
 * Before installation, set Virtualization and IOMMU (PCIE passthrough) on in BIOS settings
