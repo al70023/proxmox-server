@@ -123,6 +123,13 @@ This will be a virtualized self-hosted NAS solution, passing in a hard drive as 
 All setup can be found [here](OpenMediaVault/GUIDE.md).  
 
 
+## 4. Proxmox Backup Server
+
+This will be a virtualized instance of Proxmox Backup Server, as a VM on the Proxmox host. This setup will mount the OpenMediaVault NAS drive as the device to store on.  
+
+All setup can be found [here](Proxmox-Backup-Server/GUIDE.md).  
+
+
 
 # Miscellaneous
 
