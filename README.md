@@ -45,7 +45,7 @@ Navigate to your proxmox host, and then the `Repositories` tab under `Updates`.
 
 Disable the two repositories with "enterprise" and Add a new reposiory with the "No-subscription" title. 
 
-Click the `Updates ` tab and hit "refresh".  
+Click the `Updates` tab and hit "refresh".  
 
 ![image](https://github.com/user-attachments/assets/0176c3af-f439-4b16-9300-f92130ab6c54)  
 
