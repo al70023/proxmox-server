@@ -19,5 +19,11 @@ This setup uses a physical hard disk passed to the OpenMediaVault VM as the moun
 
 ## Web GUI Setup
 
-Once the VM is installed and rebooted, run updates on the linux machine.
+Once the VM is installed and rebooted, navigate to the 'Adminstration' tab.  
+
+Configure 'No Subscription' environment and run updates.  
+
+Then, navigate to 'Certificates' tab and set a self-signed certificate for the web GUI.  
+
+
 
