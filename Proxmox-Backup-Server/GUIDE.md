@@ -25,5 +25,7 @@ Configure 'No Subscription' environment and run updates.
 
 Then, navigate to 'Certificates' tab and set a self-signed certificate for the web GUI.  
 
+Use the OpenMediaVault guide to mount the fileshare for backup storage.  
+
 
 
