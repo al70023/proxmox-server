@@ -4,7 +4,7 @@ This setup uses a physical hard disk passed through to the OMV VM as shown in th
 
 ## Resources
 * [Installing Open Media Vault on Proxmox made EASY](https://www.youtube.com/watch?v=Bce7VT3kJ4g)
-* [Proxmox Wiki - Passthriugh Physical Disk to Virtual Machine](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
+* [Proxmox Wiki - Passthrough Physical Disk to Virtual Machine](https://pve.proxmox.com/wiki/Passthrough_Physical_Disk_to_Virtual_Machine_(VM))
 * [Linux NFS Server: How to Set Up Server and Client](https://bluexp.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client#H_H6)
 
 
