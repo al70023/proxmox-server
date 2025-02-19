@@ -93,7 +93,18 @@ This will be a local DNS Server with blocklists and an upstream resolver.
 All setup can be found [here](AdGuard-Home/GUIDE.md).  
 
 
-## 2. Wireguard VPN Tunnel  
+## 2. Nginx Proxy Manager  
+
+This will serve as local DNS rewrites for docker services running on the server.   
+
+Users will no longer use IP-ADDRESS:PORT to navigate to a service on their browser, and instead use the URL assigned.  
+
+This will also use Let's Encrypt SSL certificates, for HTTPS encryption on the browser when using these services.  
+
+All setup can found [here](Nginx-Proxy-Manager/GUIDE.md).  
+
+
+## 3. (Not In Use Currently) Wireguard VPN Tunnel  
 
 This will allow securely tunneling into the host machine from any external client not on the same home network.  
 
