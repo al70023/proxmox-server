@@ -10,6 +10,20 @@ Once the container is spun up, navigate to `x.x.x.x:81` to log in, where `x.x.x.
   * [Self Hosting on Your Home Server - Cloudflare + Nginx Proxy Manager](https://www.youtube.com/watch?v=GarMdDTAZJo&t=567s)
 
 
+
+## Container Setup:  
+
+|               |               |
+| ------------- | ------------- |
+| Disk Size     | 4 GiB  |
+| CPU Cores     | 1 (cpu limit = 1)  |  
+| Memory        | 1024 MiB  |
+| Swap          | 512 MiB   |  
+| IPv4          | dhcp  |
+| DNS           | Host   |   
+
+
+
 ## Duck DNS Setup:
 
 This setup will use Duck DNS again, but pointing to an internal IP address. The domain name will be used to validate ownership and create SSL certificates that can be attached to proxy hosts, for encrypted connections to your services.      
