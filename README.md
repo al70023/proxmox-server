@@ -97,7 +97,7 @@ All setup can be found [here](AdGuard-Home/GUIDE.md).
 
 This will serve as local DNS rewrites for docker services running on the server.   
 
-Users will no longer use IP-ADDRESS:PORT to navigate to a service on their browser, and instead use the URL assigned.  
+Users will no longer use IP-ADDRESS:PORT to navigate to a service on their browser, and instead use the hostname assigned.  
 
 This will also use Let's Encrypt SSL certificates, for HTTPS encryption on the browser when using these services.  
 
