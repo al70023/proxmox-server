@@ -7,6 +7,7 @@ This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/g
 * [Jim's Garage - Frigate CCTV Install & Setup](https://www.youtube.com/watch?v=iO584g5c0DY&t=1220s)
 * [Frigate in Proxmox LXC - Unprivileged with Intel iGPU (11th gen), USB Coral and Network share](https://github.com/blakeblackshear/frigate/discussions/5773)
 * [Frigate Official Wiki - Getting Started](https://docs.frigate.video/guides/getting_started)
+* [Reolink and Configuring Substreams for Record, Detect](https://www.reddit.com/r/frigate_nvr/comments/1g5r8o1/help_with_configuring_reolink_poe_doorbell_with/)
 
 ### Device Passthroughs and Configurations:
 * [Coral TPU Driver Install for Linux](https://coral.ai/docs/m2/get-started/#requirements)
