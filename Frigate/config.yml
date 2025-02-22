@@ -54,6 +54,9 @@ snapshots:
 
 record:
   enabled: false      # <----- If recording is disabled in the config, turning it on via the UI or MQTT later will have no effect. 
+  # retain:
+  #   days: 0
+  #   mode: all
   # alerts:
     # retain:
       # days: 30
