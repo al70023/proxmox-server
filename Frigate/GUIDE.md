@@ -1,6 +1,8 @@
 # Frigate Network Video Recorder
 
-This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/gp/product/B083G9KT4C?ie=UTF8&th=1&linkCode=sl1&tag=frigate0d-20&linkId=7462400a6ff3a326d7e0d0c7f6b93504&language=en_US&ref_=as_li_ss_tl)
+This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/gp/product/B083G9KT4C?ie=UTF8&th=1&linkCode=sl1&tag=frigate0d-20&linkId=7462400a6ff3a326d7e0d0c7f6b93504&language=en_US&ref_=as_li_ss_tl).  
+
+Frigate will run on a Docker container on this VM. Thus, this setup will include Docker, Docker Compose, and Portainer for easy GUI management.  
 
 ## Resources
 ### Initial Setup:
@@ -14,3 +16,26 @@ This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/g
 * [/dev/apex_0 Not Found](https://github.com/google-coral/edgetpu/issues/407)
 * [Linux Virtual Machine iGPU Passthrough Configuration](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/#linux-virtual-machine-igpu-passthrough-configuration)
 * [Reddit - Frigate iGPU statistics](https://www.reddit.com/r/frigate_nvr/comments/1byj9pp/frigate_in_docker_in_unprivileged_lxc_has_no_igpu/)
+
+
+## VM and Hardware Setup    
+
+|               |               |
+| ------------- | ------------- |
+| Machine       | q35  |
+| BIOS          | OVMF (UEFI) |
+| Disk Size     | 20 GiB  |
+| CPU Cores     | 4  |  
+| CPU Type      | Host  |  
+| Memory        | 4096 MiB  |
+| Network       | Default  |
+
+
+## Docker and Portainer Setup
+
+From the [Docker Official Docs](https://docs.docker.com/engine/install/debian/), get Docker set up on the Linux machine with the instructed commands.  
+
+Once Docker is successfully installed and the hello-world container is spun up to test, from the [Portainer Official Docs](https://docs.portainer.io/start/install-ce/server/docker/linux) you can proceed with setting up Portainer.  
+
+Finally, to spin up a Frigate container, use the [attached docker-compose.yml file](docker-compose.yml), either in Portainer or in the command line, pull the image and start the app.   
+
