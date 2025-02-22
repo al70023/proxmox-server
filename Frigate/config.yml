@@ -27,11 +27,21 @@ objects:
     - cell phone
     - laptop
 
+review:
+  alerts:
+    labels:
+      - person
+  detections:
+    labels:
+      - car
+      - dog
+      - bird
+
 mqtt:
   enabled: false
 
 ffmpeg:
-  hwaccel_args: preset-vaapi  # <----- For integrating Intel iGPU after passthrough
+  hwaccel_args: preset-vaapi  # <----- For integrating Intel iGPU after passthrough (might need to be changed to preset-intel-qsv-h264 or preset-intel-qsv-h265 as of version 0.15)
   # output_args:              # <----- Optional, audio inclusion
   #   record: preset-record-generic-audio-aac
 
@@ -43,16 +53,17 @@ snapshots:
     # default: 30
 
 record:
-  enabled: false       # <----- If recording is disabled in the config, turning it on via the UI or MQTT later will have no effect. 
-  # events:
-   # pre_capture: 5    # <----- Number of seconds before the detection to include (default)
-   # post_capture: 5   # <----- Number of seconds after the detection to include (default)
-   # retain:
-     # default: 30     # <----- Number of days to retain recordings
-     # mode: active_objects   # <------ Mode for retention (all | motion | active_objects)
-   # objects:
-     # - person
-     # - bird
-     # - cat
-     # - dog
-version: 0.14
+  enabled: false      # <----- If recording is disabled in the config, turning it on via the UI or MQTT later will have no effect. 
+  # alerts:
+    # retain:
+      # days: 30
+      # mode: active_objects
+    # pre_capture: 5      # <----- Number of seconds before the detection to include (default)
+    # post_capture: 10    # <----- Number of seconds after the detection to include (default)
+  # detections:
+    # retain:
+      # days: 30          # <----- Number of days to retain recordings
+      # mode: active_objects     # <------ Mode for retention (all | motion | active_objects)
+    # pre_capture: 5
+    # post_capture: 10
+version: 0.15
