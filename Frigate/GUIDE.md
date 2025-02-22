@@ -69,6 +69,12 @@ Finally, to spin up a Frigate container, use the [attached docker-compose.yml fi
 
 ## Frigate Config Setup
 
+Follow the [Frigate Official Docs - Getting Started](https://docs.frigate.video/guides/getting_started) for incrementally adding to the config file and ensuring everything works. Additionally, Jim's Garage walks through his config file.  
+
+For camera-specific configurations, follow [this section](https://docs.frigate.video/configuration/camera_specific).  
+
+For audio settings on cameras, follow [this section](https://docs.frigate.video/configuration/audio_detectors).  
+
 
 
 
