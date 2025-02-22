@@ -2,6 +2,8 @@
 
 This setup uses the [Amcrest IP5M-T1179EW-AI-V3 Camera](https://www.amazon.com/gp/product/B083G9KT4C?ie=UTF8&th=1&linkCode=sl1&tag=frigate0d-20&linkId=7462400a6ff3a326d7e0d0c7f6b93504&language=en_US&ref_=as_li_ss_tl).  
 
+This setup also makes use of the Coral TPU for object detection resource offloading.
+
 Frigate will run on a Docker container on this VM. Thus, this setup will include Docker, Docker Compose, and Portainer for easy GUI management.  
 
 ## Resources
@@ -28,7 +30,15 @@ Frigate will run on a Docker container on this VM. Thus, this setup will include
 | CPU Cores     | 4  |  
 | CPU Type      | Host  |  
 | Memory        | 4096 MiB  |
-| Network       | Default  |
+| Network       | Default  |  
+
+
+## Coral TPU Setup  
+
+Once the Coral TPU is physically installed in your Proxmox VE host server, you should see it as an available PCIe device for passthrough in the Hardware Options for your virtual machine.  
+
+![image](https://github.com/user-attachments/assets/d2cb3898-c5ab-4c66-bb4a-9b0310ddd20a)
+
 
 
 ## Docker and Portainer Setup
@@ -37,5 +47,8 @@ From the [Docker Official Docs](https://docs.docker.com/engine/install/debian/),
 
 Once Docker is successfully installed and the hello-world container is spun up to test, from the [Portainer Official Docs](https://docs.portainer.io/start/install-ce/server/docker/linux) you can proceed with setting up Portainer.  
 
-Finally, to spin up a Frigate container, use the [attached docker-compose.yml file](docker-compose.yml), either in Portainer or in the command line, pull the image and start the app.   
+Finally, to spin up a Frigate container, use the [attached docker-compose.yml file](docker-compose.yml), either in Portainer or in the command line, pull the image and start the app. Make sure you edit and review the configurations in the docker-compose.yml to match your system's requirements and desired directory locations for the volumes.  
+
+
+
 
