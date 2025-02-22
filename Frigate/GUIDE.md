@@ -76,5 +76,10 @@ For camera-specific configurations, follow [this section](https://docs.frigate.v
 For audio settings on cameras, follow [this section](https://docs.frigate.video/configuration/audio_detectors).  
 
 
+## Amcrest Camera Setup
+
+Currently, I am using this main stream + sub stream configuration, which is set by navigating to the Amcrest camera's IP address to access its GUI.  
+
+![image](https://github.com/user-attachments/assets/c38c0019-eb20-46c9-8ff7-abbde72943ff)
 
 
