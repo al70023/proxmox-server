@@ -37,7 +37,19 @@ Frigate will run on a Docker container on this VM. Thus, this setup will include
 
 Once the Coral TPU is physically installed in your Proxmox VE host server, you should see it as an available PCIe device for passthrough in the Hardware Options for your virtual machine.  
 
-![image](https://github.com/user-attachments/assets/d2cb3898-c5ab-4c66-bb4a-9b0310ddd20a)
+![image](https://github.com/user-attachments/assets/d2cb3898-c5ab-4c66-bb4a-9b0310ddd20a)  
+
+To install the necessary drivers for the PCIe Coral TPU, boot up the virtual machine, and follow the [Official Docs](https://coral.ai/docs/m2/get-started/#requirements).  
+
+If you fail to get the last step to work, verifying that the PCIe driver is loaded with `ls /dev/apex_0`, try disabling secure boot on the virtual machine and restarting, as per [this issue](https://github.com/google-coral/edgetpu/issues/407).  
+
+Now, the Coral TPU should be set up and you are ready to move on.  
+
+
+## iGPU Passthrough
+
+Optionally, you may choose to additionally passthrough a GPU to the Frigate VM, for hardware acceleration (read more from the [Official Frigate Docs](https://docs.frigate.video/configuration/hardware_acceleration/)).  
+
 
 
 
