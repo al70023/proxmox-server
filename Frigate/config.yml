@@ -16,7 +16,7 @@ cameras:
       fps: 20      # <---- update for your camera's FPS
 
 detectors:
-  coral_1:
+  coral_1:    # <------ Name the device
     type: edgetpu
     device: pci:0
 
