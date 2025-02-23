@@ -1,9 +1,13 @@
 go2rtc:
   streams:
-    reolink_doorbell:   # <------ Name the stream (match to camera name below in camera section)
+    #amcrest_1:            #  <---------- OPTIONAL: for setting up Amcrest to communicate through go2rtc instead of jsmpeg stream
+      #- rtsp://admin:uZAxCPywCGbV8G@192.168.50.55/cam/realmonitor?channel=1&subtype=0
+    #amcrest_1_sub:
+      #- rtsp://admin:uZAxCPywCGbV8G@192.168.50.55/cam/realmonitor?channel=1&subtype=1
+    reolink_doorbell:      # <------ Name the stream (match to camera name below in camera section)
       - "ffmpeg:http://[DOORBELL IP ADDRESS]/flv?port=1935&app=bcs&stream=channel0_main.bcs&user=[DOORBELL WEB UI USERNAME]&password=[DOORBELL WEB UI PASSWORD]#video=copy#audio=copy#audio=opus"
       - rtsp://[DOORBELL IP ADDRESS]/Preview_01_sub
-    reolink_doorbell_sub:   # <------ Name the stream (match to camera name below in camera section)
+    reolink_doorbell_sub:      # <------ Name the stream (match to camera name below in camera section)
       - "ffmpeg:http://[DOORBELL IP ADDRESS]/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user=[DOORBELL WEB UI USERNAME]&password=[DOORBELL WEB UI PASSWORD]"
 
 cameras:
@@ -12,9 +16,13 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://[CAMERA WEB UI USERNAME]:[CAMERA WEB UI PASSWORD]@[CAMERA IP ADDRESS]/cam/realmonitor?channel=1&subtype=0  # <----- The stream you want to use for detection (this subpath works for this Amcrest Camera model)
+        #- path: rtsp://127.0.0.1:8554/amcrest_1         #  <---------- OPTIONAL: for setting up Amcrest to communicate through go2rtc instead of jsmpeg stream
+          #input_args: preset-rtsp-restream
           roles:
             - record
         - path: rtsp://[CAMERA WEB UI USERNAME]:[CAMERA WEB UI PASSWORD]@[CAMERA IP ADDRESS]/cam/realmonitor?channel=1&subtype=1  # <----- The sub stream, typically supporting low resolutions only (this subpath works for this Amcrest Camera model)
+        #- path: rtsp://127.0.0.1:8554/amcrest_1_sub      #  <---------- OPTIONAL: for setting up Amcrest to communicate through go2rtc instead of jsmpeg stream
+          #input_args: preset-rtsp-restream
           roles:
             - detect
     detect:
