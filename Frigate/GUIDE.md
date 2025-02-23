@@ -83,3 +83,18 @@ Currently, I am using this main stream + sub stream configuration, which is set 
 ![image](https://github.com/user-attachments/assets/c38c0019-eb20-46c9-8ff7-abbde72943ff)
 
 
+## Reolink Doorbell Setup
+
+Follow the [Official Frigate Docs](https://docs.frigate.video/configuration/camera_specific#reolink-cameras) on setting up Reolink cameras.  
+
+Ensure all ports are open on Reolink Camera.  
+
+<img width="1893" alt="image" src="https://github.com/user-attachments/assets/12362b04-be4e-45a1-ad9e-8815bd994df3" />  
+
+Insert the go2rtc streams sections in the config files exactly as specfied in the docs. 
+
+Additionally, set 
+* `On, fluency first` for CBR (constant bit rate)
+* `Interframe Space 1x` for iframe interval to be the same as the frame rate
+
+
