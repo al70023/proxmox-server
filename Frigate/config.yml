@@ -1,3 +1,11 @@
+go2rtc:
+  streams:
+    reolink_doorbell:   # <------ Name the stream (match to camera name below in camera section)
+      - "ffmpeg:http://[DOORBELL IP ADDRESS]/flv?port=1935&app=bcs&stream=channel0_main.bcs&user=[DOORBELL WEB UI USERNAME]&password=[DOORBELL WEB UI PASSWORD]#video=copy#audio=copy#audio=opus"
+      - rtsp://[DOORBELL IP ADDRESS]/Preview_01_sub
+    reolink_doorbell_sub:   # <------ Name the stream (match to camera name below in camera section)
+      - "ffmpeg:http://[DOORBELL IP ADDRESS]/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user=[DOORBELL WEB UI USERNAME]&password=[DOORBELL WEB UI PASSWORD]"
+
 cameras:
   amcrest_1: # <------ Name the camera
     enabled: true
@@ -14,6 +22,19 @@ cameras:
       width: 1280  # <---- update for your camera's resolution, on the detect stream (substream)
       height: 720  # <---- update for your camera's resolution, on the detect stream (substream)
       fps: 20      # <---- update for your camera's FPS
+
+  reolink_doorbell:   # <------ Match to go2rtc stream camera name above
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://127.0.0.1:8554/reolink_doorbell   # <------ Match to go2rtc stream camera name above
+          input_args: preset-rtsp-restream
+          roles:
+            - record
+        - path: rtsp://127.0.0.1:8554/reolink_doorbell_sub   # <------ Match to go2rtc substream camera name above
+          input_args: preset-rtsp-restream
+          roles:
+            - detect
 
 detectors:
   coral_1:    # <------ Name the device
