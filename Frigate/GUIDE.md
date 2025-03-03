@@ -96,5 +96,6 @@ Insert the go2rtc streams sections in the config files exactly as specfied in th
 Additionally, set 
 * `On, fluency first` for CBR (constant bit rate)
 * `Interframe Space 1x` for iframe interval to be the same as the frame rate on both main stream and substream
+* `Framerate Constant`
 
 
