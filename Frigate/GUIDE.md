@@ -96,7 +96,7 @@ Must be using HTTPS web GUI for two-way audio to work.
 
 <img width="1893" alt="image" src="https://github.com/user-attachments/assets/12362b04-be4e-45a1-ad9e-8815bd994df3" />  
 
-Insert the go2rtc streams sections in the config file from [the config.yml](config.yml). Adjustments are made to fix some errors from both the Frigate docs and the Github issue linked for Reolink two-way audio.   
+Insert the go2rtc streams sections in the config file from the [config.yml](config.yml). Adjustments are made to fix some errors from both the Frigate docs and the Github issue linked for Reolink two-way audio.   
 
 Additionally, set 
 * `On, fluency first` for CBR (constant bit rate)
