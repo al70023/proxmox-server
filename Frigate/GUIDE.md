@@ -92,6 +92,8 @@ Follow the [Official Frigate Docs](https://docs.frigate.video/configuration/came
 
 Ensure all ports are open on Reolink Camera.  
 
+Must be using HTTPS web GUI for two-way audio to work.  
+
 <img width="1893" alt="image" src="https://github.com/user-attachments/assets/12362b04-be4e-45a1-ad9e-8815bd994df3" />  
 
 Insert the go2rtc streams sections in the config files exactly as specfied in the docs. 
