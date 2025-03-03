@@ -20,6 +20,9 @@ Frigate will run on a Docker container on this VM. Thus, this setup will include
 * [Linux Virtual Machine iGPU Passthrough Configuration](https://3os.org/infrastructure/proxmox/gpu-passthrough/igpu-passthrough-to-vm/#linux-virtual-machine-igpu-passthrough-configuration)
 * [Reddit - Frigate iGPU statistics](https://www.reddit.com/r/frigate_nvr/comments/1byj9pp/frigate_in_docker_in_unprivileged_lxc_has_no_igpu/)
 
+### Frigate Reolink Doorbell Two-Way Audio
+* [Github - Reolink POE white doorbell 2-way audio](https://github.com/blakeblackshear/frigate/discussions/16631)
+
 
 ## VM and Hardware Setup    
 
