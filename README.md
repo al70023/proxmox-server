@@ -124,6 +124,8 @@ All setup can be found [here](OPNsense/GUIDE.md).
 
 This will be a completely self-hosted home CCTV surveillance/security system.  
 
+This is a Debian 12 Linux Machine running Docker, with Frigate as a Docker container, as well as [Ntfy](Ntfy/GUIDE.md) and [Frigate-Notify](Frigate-Notify/GUIDE.md) for notifications.  
+
 All setup can be found [here](Frigate/GUIDE.md).  
 
 
