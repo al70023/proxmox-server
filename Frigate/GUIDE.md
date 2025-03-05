@@ -104,3 +104,14 @@ Additionally, set
 * `Framerate Constant`
 
 
+## Frigate Notifications
+
+To set up native Frigate NVR Notifications, navigate to Settings, then the Notifications tab.  
+
+![image](https://github.com/user-attachments/assets/e71a8e2e-29b1-4bad-a79f-45f0b0aa2e3c)  
+
+To enable Notifications, a Progressive Web App (PWA) must be used for Frigate (this works on desktop and mobile).  Additionally, it is recommended to use a secure signed certificate with HTTPS for the web GUI.  
+
+Once the device is registered for Frigate Notifications, the docker container must be restarted for the device to begin receiving notifications.  
+
+As an alternative, the Frigate-Notify + Ntfy setup provides a solution for notifications from Frigate, with mobile functionality, as well.  
