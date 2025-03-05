@@ -1,0 +1,152 @@
+app:
+  mode: reviews
+  api:           # <----- OPTIONAL
+    enabled: true
+    port: 8000
+
+frigate:
+  server: http://[YOUR-FRIGATE-IP-ADDRESS]:[YOUR-FRIGATE-PORT]
+#  ignoressl: false
+#  public_url:
+#  headers:
+  startup_check:
+    attempts: 3
+    interval: 30
+
+  webapi:
+    enabled: true
+    interval: 10
+
+  mqtt:
+    enabled: false
+#    server:
+#    port:
+#    clientid:
+#    username:
+#    password:
+#    topic_prefix:
+
+#  cameras:
+#    exclude:
+#      - test_cam_01
+
+alerts:
+  general:
+    title: Frigate Alert
+    timeformat: Mon, 02 Jan 2006 15:04:05 MST
+    nosnap: allow
+    snap_bbox: false
+    snap_timestamp: false
+    snap_crop: false
+    max_snap_retry: 10
+    notify_once: true
+    notify_detections: false
+    recheck_delay: 0
+    audio_only: allow
+
+#  quiet:
+#    start:
+#    end:
+
+  zones:
+    unzoned: allow
+#    allow:
+#     - test_zone_01
+#    block:
+#     - test_zone_02
+
+  labels:
+    min_score: 0
+#    allow:
+#     - person
+#     - dog
+#    block:
+#     - bird
+
+#  sublabels:
+#    allow:
+#     - ABCD
+#    block:
+#     - EFGH
+
+  discord:
+    enabled: false
+#    webhook:
+#    template:
+
+  gotify:
+    enabled: false
+#    server:
+#    token:
+#    ignoressl:
+#    template:
+
+  mattermost:
+    enabled: false
+#    webhook:
+#    channel:
+#    username:
+#    priority:
+#    ignoressl:
+#    headers:
+#    template:
+
+  ntfy:
+    enabled: true
+    server: https://[YOUR-NTFY-SERVER-IP-OR-URL]
+    topic: [YOUR-NTFY-TOPIC]
+#    ignoressl: true
+#    headers:
+#    template:
+
+  pushover:
+    enabled: false
+#    token:
+#    userkey:
+#    devices:
+#    sound:
+#    priority:
+#    retry:
+#    expire:
+#    ttl:
+#    template:
+
+  signal:
+    enabled: false
+#    server:
+#    account:
+#    recipients:
+#    ignoressl:
+#    template:
+
+  smtp:
+    enabled: false
+#    server:
+#    port:
+#    tls:
+#    user:
+#    password:
+#    recipient:
+#    template:
+
+  telegram:
+    enabled: false
+#    chatid:
+#    token:
+#    template:
+
+  webhook:
+    enabled: false
+#    server:
+#    ignoressl:
+#    method:
+#    params:
+#    headers:
+#    template:
+
+
+monitor:
+  enabled: false
+#  url:
+#  interval:
+#  ignoressl:
