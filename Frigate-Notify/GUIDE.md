@@ -9,3 +9,4 @@ This lightweight docker container will act as a bridge between the Frigate NVR a
 
 Note that for integration with Ntfy, attachments are required to be enabled in Ntfy. This is because Frigate-Notify includes a screenshot of the Frigate alert in the notification, which is included as an attachment.  
 
+Follow the official docs for step by step setup of the config.yml, or use [this config.yml file](config.yml) as reference.  
