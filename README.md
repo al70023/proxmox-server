@@ -104,7 +104,14 @@ This will also use Let's Encrypt SSL certificates, for HTTPS encryption on the b
 All setup can found [here](Nginx-Proxy-Manager/GUIDE.md).  
 
 
-## 3. (Not In Use Currently) Wireguard VPN Tunnel  
+## 3. Homepage Dashboard  
+
+This dashboard will be an all-encompassing holistic view of the entire homelab setup.   
+
+All setup can found [here](Homepage/GUIDE.md).  
+
+
+## 4. (Not In Use Currently) Wireguard VPN Tunnel  
 
 This will allow securely tunneling into the host machine from any external client not on the same home network.  
 
