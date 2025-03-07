@@ -7,6 +7,7 @@ Once the container is spun up, navigate to `x.x.x.x:81` to log in, where `x.x.x.
 
 ## Resources:
   * [Proxmox VE Helper Scripts](https://tteck.github.io/Proxmox/)
+  * [Techdox - Secure Local Domains w/ DNS and Nginx](https://www.youtube.com/watch?v=hS76TQO0A8s)
   * [Self Hosting on Your Home Server - Cloudflare + Nginx Proxy Manager](https://www.youtube.com/watch?v=GarMdDTAZJo&t=567s)
   * [Home Network Guy - Deploy Nginx Proxy Manager in a DMZ with OPNsense](https://homenetworkguy.com/how-to/deploy-nginx-proxy-manager-in-dmz-with-opnsense/)  
 
