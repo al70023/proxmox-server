@@ -61,4 +61,5 @@ For each of the previously set up services, such as AdGuard Home, Vaultwarden, W
 The format of this subdomain name should be `[SERVICE].[YOUR-SUBDOMAIN].duckdns.org`, where `[SERVICE]` can be anything you like to name the service, such as wireguard or wg for Wireguard, and `[YOUR-SUBDOMAIN]` is the one chosen for Duck DNS, which you also created SSL certificates for.  
 
 Create a domain name, use the name of the container in **Forward Hostname/IP**, and the port of the web GUI for that service. Select the SSL certificate created for your subdomain, and attach it to the proxy host.   
- 
+
+ Finally, in your local DNS server, create DNS rewrites for each internal service, mapping its hostname set in Nginx to the Nginx IP, so that DNS requests for those services will quickly route straight to NPM, which will then use that hostname to serve up the correct service's IP.  
