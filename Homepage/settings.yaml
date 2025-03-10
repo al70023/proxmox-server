@@ -1,0 +1,55 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+title: Home
+
+layout:
+
+  # Bookmarks
+  Shortcuts:
+    style: column
+    columns: 2
+    header: false
+  Finances:
+    style: column
+    columns: 2
+    header: false
+
+  # Calendar
+  Calendar:
+    header: false
+
+  # Services
+  Infrastructure:
+    style: row
+    columns: 3
+  Network & IoT:
+    style: row
+    columns: 3
+    useEqualHeights: true
+  Hardware:
+    style: column
+    useEqualHeights: true
+    header: false
+  Cams:
+    style: column
+    useEqualHeights: true
+    header: false
+  Services:
+    style: row
+    columns: 4
+
+disableCollapse: true
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: false
+  showSearchSuggestions: true
+  hideVisitURL: false
+  provider: google
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
+
