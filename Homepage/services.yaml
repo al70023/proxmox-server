@@ -1,0 +1,210 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Calendar:
+    - Calendar:
+        widget:
+            type: calendar
+            firstDayInWeek: sunday
+            view: monthly # optional - possible values monthly, agenda
+            maxEvents: 10 # optional - defaults to 10
+            showTime: true # optional - show time for event happening today - defaults to false
+            timezone: America/Chicago
+
+
+# Bookmarks
+- Shortcuts:
+    - Gmail:
+        icon: gmail.svg
+        href: https://gmail.com/
+    - YouTube:
+        icon: youtube.svg
+        href: https://youtube.com/
+    - TickTick:
+        icon: https://img.icons8.com/?size=100&id=mVX4VZPnIMkd&format=png&color=000000
+        href: https://ticktick.com/webapp/#c/all/calendar/w
+    - Github:
+        icon: github-light.svg
+        href: https://github.com/al70023/proxmox-server
+    - ChatGPT:
+        icon: chatgpt.svg
+        href: https://chatgpt.com/
+    - DuckDNS:
+        icon: duckdns.svg
+        href: https://www.duckdns.org/
+
+- Finances:
+    - Chase:
+        icon: si-chase-#117ACA
+        href: https://secure.chase.com/web/auth/dashboard#/dashboard/overview
+    - Wealthfront:
+        icon: https://www.svgrepo.com/show/331640/wealthfront.svg
+        href: https://www.wealthfront.com/dashboard
+    - Principal:
+        icon: https://companieslogo.com/img/orig/PFG-e98e7c78.png?t=1720244493
+        href: https://account.individuals.principal.com/
+    - Fidelity:
+        icon: https://logodownload.org/wp-content/uploads/2021/05/fidelity-investments-logo-7.png
+        href: https://digital.fidelity.com/ftgw/digital/portfolio/summary
+    - HSA Bank:
+        icon: /picsvg_download.svg
+        href: https://account.hsabank.com/#/
+    - iTrust Capital:
+        icon: https://cdn-1.webcatalog.io/catalog/itrustcapital/itrustcapital-icon-filled-256.webp?v=1739157215699
+        href: https://account.hsabank.com/#/
+
+
+
+
+- Infrastructure:
+
+    - Proxmox VE:
+        href: https://proxmox.al70023.duckdns.org:8006
+        icon: proxmox.svg
+        description: 192.168.1.10:8006
+        siteMonitor: https://proxmox.al70023.duckdns.org:8006
+        # statusStyle: "dot"
+        widget:
+            type: proxmox
+            url: https://proxmox.al70023.duckdns.org:8006
+            username: {{HOMEPAGE_VAR_PROXMOX_API_TOKEN_ID}}
+            password: {{HOMEPAGE_VAR_PROXMOX_API_SECRET}}
+            node: proxmox
+
+    - OpenMediaVault:
+        href: https://omv.al700.duckdns.org
+        icon: openmediavault.svg
+        description: 192.168.1.40
+        siteMonitor: https://omv.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: openmediavault
+            url: https://omv.al700.duckdns.org
+            username: {{HOMEPAGE_VAR_OMV_USERNAME}}
+            password: {{HOMEPAGE_VAR_OMV_PASSWORD}}
+            method: services.getStatus
+
+    
+    - Portainer:
+        href: https://portainer.al700.duckdns.org
+        icon: portainer.svg
+        description: 192.168.1.20:9443
+        siteMonitor: https://portainer.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: portainer
+            url: https://portainer.al700.duckdns.org
+            env: {{HOMEPAGE_VAR_PORTAINER_ENV}}
+            key: {{HOMEPAGE_VAR_PORTAINER_API_KEY}}
+
+
+
+- Services:
+
+    - Frigate:
+        href: https://frigate.al700.duckdns.org
+        icon: frigate.svg
+        description: 192.168.1.20:5000/8971
+        siteMonitor: https://frigate.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: frigate
+            url: http://192.168.1.20:5000
+            enableRecentEvents: true # Optional, defaults to false
+
+    - Ntfy:
+        href: https://ntfy.al700.duckdns.org
+        icon: ntfy.svg
+        description: 192.168.1.20:80
+        siteMonitor: https://ntfy.al700.duckdns.org
+        # statusStyle: "dot"
+
+    - Ollama:
+        href: https://ollama.al700.duckdns.org
+        icon: ollama.svg
+        description: 192.168.1.20:3000
+        siteMonitor: https://ollama.al700.duckdns.org
+        # statusStyle: "dot"
+
+    - Homepage:
+        href: https://homepage.al700.duckdns.org
+        icon: homepage.png
+        description: 192.168.1.5
+        siteMonitor: https://homepage.al700.duckdns.org
+        # statusStyle: "dot"
+
+
+
+
+- Network & IoT:
+    - OPNsense:
+        href: https://opnsense.al700.duckdns.org
+        icon: opnsense.svg
+        description: 192.168.1.1
+        siteMonitor: https://opnsense.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: opnsense
+            url: https://opnsense.al700.duckdns.org
+            username: {{HOMEPAGE_VAR_OPNSENSE_API_KEY}}
+            password: {{HOMEPAGE_VAR_OPNSENSE_API_SECRET}}
+            wan: wan
+
+    - AdGuard Home:
+        href: https://agh.al700.duckdns.org
+        icon: adguard-home.svg
+        description: 192.168.1.2
+        siteMonitor: https://agh.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: adguard
+            url: https://agh.al700.duckdns.org/
+            username: {{HOMEPAGE_VAR_AGH_USERNAME}}
+            password: {{HOMEPAGE_VAR_AGH_PASSWORD}}
+
+    - Nginx Proxy Manager:
+        href: https://npm.al700.duckdns.org
+        icon: nginx-proxy-manager.svg
+        description: 192.168.1.3
+        siteMonitor: https://npm.al700.duckdns.org
+        # statusStyle: "dot"
+        widget:
+            type: npm
+            url: https://npm.al700.duckdns.org
+            username: {{HOMEPAGE_VAR_NPM_USERNAME}}
+            password: {{HOMEPAGE_VAR_NPM_PASSWORD}}
+
+
+
+- Hardware:
+    - TP-Link Managed POE Switch:
+        href: http://192.168.1.100/
+        icon: tp-link.svg
+        description: 192.168.1.100
+        siteMonitor: http://192.168.1.100/
+        statusStyle: "dot"
+
+    - TP-Link AX1800 Wifi 6 Access Point:
+        href: http://192.168.1.103/
+        icon: tp-link.svg
+        description: 192.168.1.103
+        siteMonitor: http://192.168.1.103/
+        statusStyle: "dot"
+
+
+
+- Cams:
+    - Amcrest IP Camera:
+        href: http://192.168.50.55/
+        icon: amcrest.png
+        description: 192.168.50.55
+        siteMonitor: http://192.168.50.55/
+        statusStyle: "dot"
+
+    - Reolink Wifi Doorbell:
+        href: http://192.168.50.85/
+        icon: reolink.svg
+        description: 192.168.50.85
+        siteMonitor: http://192.168.50.85/
+        statusStyle: "dot"
