@@ -1,0 +1,67 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+# - Developer:
+#     - Github:
+#         - abbr: GH
+#           icon: github-light.svg
+#           href: https://github.com/al70023/proxmox-server
+
+#     - ChatGPT:
+#         - abbr: GPT
+#           icon: chatgpt.svg
+#           href: https://chatgpt.com/
+
+#     - DuckDNS:
+#         - abbr: DDNS
+#           icon: duckdns.svg
+#           href: https://www.duckdns.org/
+
+# - Social:
+#     - TickTick:
+#         - abbr: TCKTCK
+#           icon: https://img.icons8.com/?size=100&id=mVX4VZPnIMkd&format=png&color=000000
+#           href: https://ticktick.com/webapp/#c/all/calendar/w
+
+#     - Gmail:
+#         - abbr: MAIL
+#           icon: gmail.svg
+#           href: https://gmail.com/
+
+# - Entertainment:
+#     - YouTube:
+#         - abbr: YT
+#           icon: youtube.svg
+#           href: https://youtube.com/
+
+# - Finances:
+#     - Chase:
+#         - abbr: CHSE
+#           icon: si-chase-#117ACA
+#           href: https://secure.chase.com/web/auth/dashboard#/dashboard/overview
+
+#     - Wealthfront:
+#         - abbr: WF
+#           icon: https://www.svgrepo.com/show/331640/wealthfront.svg
+#           href: https://www.wealthfront.com/dashboard
+
+#     - Principal:
+#         - abbr: PRIN
+#           icon: https://companieslogo.com/img/orig/PFG-e98e7c78.png?t=1720244493
+#           href: https://account.individuals.principal.com/
+
+#     - Fidelity:
+#         - abbr: FID
+#           icon: https://logodownload.org/wp-content/uploads/2021/05/fidelity-investments-logo-7.png
+#           href: https://digital.fidelity.com/ftgw/digital/portfolio/summary
+
+#     - HSA Bank:
+#         - abbr: HSA
+#           icon: /picsvg_download.svg
+#           href: https://account.hsabank.com/#/
+
+#     - iTrust Capital:
+#         - abbr: iT
+#           icon: https://cdn-1.webcatalog.io/catalog/itrustcapital/itrustcapital-icon-filled-256.webp?v=1739157215699
+#           href: https://account.hsabank.com/#/
