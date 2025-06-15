@@ -37,3 +37,10 @@ And in Nginx Proxy Manager:
 
 ![image](https://github.com/user-attachments/assets/af72947f-a6ab-4577-abc1-43119ebdaa66)  
 
+
+Remember to add a new DNS rewrite in your DNS resolver for speed internally: 
+
+![image](https://github.com/user-attachments/assets/7c91a3b0-659e-48d1-be54-1e7536c16479)  
+
+
+
