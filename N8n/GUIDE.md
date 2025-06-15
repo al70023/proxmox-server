@@ -37,6 +37,17 @@ And in Nginx Proxy Manager:
 
 ![image](https://github.com/user-attachments/assets/af72947f-a6ab-4577-abc1-43119ebdaa66)  
 
+For the Proxy Host, add this section in the Advanced tab for added security: only open up webhooks to public internet access, public anything else like Web GUI access:  
+![image](https://github.com/user-attachments/assets/c7c1c812-a4cb-49c3-9a4b-b43981988c4c)  
+
+```
+# Return 403 for all requests not starting with /webhook/
+if ($request_uri !~ ^/webhook/) {
+  return 403;
+}
+```
+  
+
 
 Remember to add a new DNS rewrite in your DNS resolver for speed internally: 
 
