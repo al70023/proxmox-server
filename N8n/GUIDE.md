@@ -30,6 +30,19 @@ Port forward HTTP, HTTPS on router to Nginx Proxy Manager:
 
 Optionally change OPNsense GUI port from 443 to something else like 1443 to avoid conflicts when hitting 192.168.1.1  
 
+For added security, add a GEOIp rule to limit hitting the public address only from USA. Go to Firewall -> Aliases -> GeoIP settings and follow [this guide](https://docs.opnsense.org/manual/how-tos/maxmind_geo_ip.html).  
+
+Afterwards, add a new Alias in GeoIP like so:  
+
+![image](https://github.com/user-attachments/assets/277b83af-1a29-40b5-a01b-b3301fb5c235)  
+
+And then make sure to add it as a source in your NAT port forward rules:  
+
+![image](https://github.com/user-attachments/assets/41ec5a8b-1ec8-4e24-9ed4-b6f18b4552c4)  
+  
+
+
+
 ![image](https://github.com/user-attachments/assets/a57d2fdb-6486-4efc-ab45-bb00bc6b6e17)  
 
 
