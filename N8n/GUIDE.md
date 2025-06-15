@@ -38,11 +38,12 @@ And in Nginx Proxy Manager:
 ![image](https://github.com/user-attachments/assets/af72947f-a6ab-4577-abc1-43119ebdaa66)  
 
 For the Proxy Host, add this section in the Advanced tab for added security: only open up webhooks to public internet access, public anything else like Web GUI access:  
-![image](https://github.com/user-attachments/assets/c7c1c812-a4cb-49c3-9a4b-b43981988c4c)  
+![image](https://github.com/user-attachments/assets/344de078-4b5a-4f98-8831-1a3c67847b9a)  
+
 
 ```
-# Return 403 for all requests not starting with /webhook/
-if ($request_uri !~ ^/webhook/) {
+# Allow only requests that start with /webhook/ OR /webhook-test
+if ($request_uri !~ ^/(webhook/|webhook-test)) {
   return 403;
 }
 ```
