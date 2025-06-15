@@ -44,12 +44,13 @@ if ($request_uri !~ ^/(webhook/|webhook-test)) {
 ```
   
 Create a second Nginx Proxy Host with the base domain and have it block access, so that only the n8n subdomain meant for webhooks will resolve:  
+  
+![image](https://github.com/user-attachments/assets/39c391b5-eea2-482a-90da-82e6d6faf6a0)  
 
-![image](https://github.com/user-attachments/assets/f7660926-2e7a-4070-aa8d-0acfe3ab3844)  
 
 ```
 # Custom Nginx Configuration:
-return 403;
+return 444;
 ```  
 
 Remember to add a new DNS rewrite in your DNS resolver for speed internally: 
