@@ -37,9 +37,9 @@ For the Proxy Host, add this section in the Advanced tab for added security: onl
 
 
 ```
-# Allow only requests that start with /webhook/ OR /webhook-test
-if ($request_uri !~ ^/(webhook/|webhook-test)) {
-  return 403;
+# Allow only requests that start with /webhook/ OR /webhook-test OR oauth
+if ($request_uri !~ ^/(webhook/|webhook-test|rest/oauth2-credential/callback)) {
+  return 444;
 }
 ```
   
