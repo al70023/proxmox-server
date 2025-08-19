@@ -125,8 +125,6 @@ This deletes the old directory that npm couldn't move.
 
 If this was successful, then you can safely restart n8n:  
 
-1. Start n8n Service
-
 ```
 # If you use PM2 (most common for manual installs):
 pm2 start n8n
@@ -137,25 +135,55 @@ systemctl start n8n
 systemctl status n8n
 ```
 
-2. Check That n8n Is Running
+If you get this error when getting the status of n8n:
+```
+× n8n.service - n8n
+Loaded: loaded (/etc/systemd/system/n8n.service; enabled; preset: enabled)
+Active: failed (Result: exit-code) since Fri 2025-07-25 22:01:09 CDT; 2s ago
+Duration: 1ms Process: 309 ExecStart=n8n start (code=exited, status=203/EXEC)
+Main PID: 309 (code=exited, status=203/EXEC)
+CPU: 537us
+
+Jul 25 22:01:09 n8n (n8n)[309]: n8n.service: Failed at step EXEC spawning n8n: No such file or directory
+Jul 25 22:01:09 n8n systemd[1]: Started n8n.service - n8n.
+Jul 25 22:01:09 n8n systemd[1]: n8n.service: Main process exited, code=exited, status=203/EXEC
+Jul 25 22:01:09 n8n systemd[1]: n8n.service: Failed with result 'exit-code'.
+```
+
+It means that n8n is not in your system’s PATH. Confirm this by running `which n8n`, which should returns nothing because n8n cannot be found.  
+
+To fix this: 
+
+1. (Re)Install n8n Globally  
+
+This will make n8n available globally:  
 
 ```
-# PM2:
-pm2 list
-# Should see n8n status as "online"
+npm install -g n8n
+```  
 
-# Systemd:
+This should create `/usr/local/bin/n8n` (verify after with `which n8n`).  
+
+2. Check Install and PATH
+```
+which n8n
+# Should output: /usr/local/bin/n8n
+n8n --version
+# Should output the installed n8n version
+```  
+
+3. Update Your systemd Service (if needed)  
+
+If `/usr/local/bin/n8n` exists, edit `/etc/systemd/system/n8n.service` to have:  
+
+```
+ExecStart=/usr/local/bin/n8n start
+```  
+
+4. Reload and Start Service
+   
+```
+systemctl daemon-reload
+systemctl start n8n
 systemctl status n8n
-# Should see "active (running)"
-
-# Docker:
-#If you use Docker, just run docker ps and check your n8n container status.
 ```
-
-3. Check n8n Version  
-
-In the Web UI, go to the user menu > About (or similar, depending on version).  
-
-Or, run:  
-
-`n8n --version`
