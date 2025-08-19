@@ -76,4 +76,86 @@ Optionally change OPNsense GUI port from 443 to something else like 1443 to avoi
 ![image](https://github.com/user-attachments/assets/a57d2fdb-6486-4efc-ab45-bb00bc6b6e17)  
 
 
+## Update Troubleshooting
 
+Sometimes, running "udpate" on the proxmox helper script will fail. Here is an example of the error given:  
+
+```
+3528 silly placeDep node_modules/n8n/node_modules/shelljs minimatch@3.1.2 OK for: glob@7.2.3 want: ^3.1.1 3529 silly fetch manifest brace-expansion@^1.1.7 3530 silly packumentCache full:https://registry.npmjs.org/brace-expansion cache-miss 3531 http fetch GET 200 https://registry.npmjs.org/brace-expansion 58ms (cache revalidated) 3532 silly packumentCache full:https://registry.npmjs.org/brace-expansion set size:46250 disposed:false 3533 silly placeDep node_modules/n8n brace-expansion@1.1.12 OK for: minimatch@3.1.2 want: ^1.1.7 3534 silly fetch manifest brace-expansion@^2.0.1 3535 silly packumentCache full:https://registry.npmjs.org/brace-expansion cache-hit 3536 silly placeDep node_modules/n8n/node_modules/minimatch brace-expansion@2.0.2 OK for: minimatch@9.0.5 want: ^2.0.1 3537 silly placeDep node_modules/n8n/node_modules/teeny-request @tootallnate/once@2.0.0 OK for: http-proxy-agent@5.0.0 want: 2 3538 silly placeDep node_modules/n8n/node_modules/teeny-request agent-base@6.0.2 OK for: http-proxy-agent@5.0.0 want: 6 3539 silly placeDep node_modules/n8n/node_modules/wrap-ansi-cjs color-convert@2.0.1 OK for: ansi-styles@4.3.0 want: ^2.0.1 3540 silly fetch manifest color-name@~1.1.4 3541 silly packumentCache full:https://registry.npmjs.org/color-name cache-miss 3542 http fetch GET 200 https://registry.npmjs.org/color-name 50ms (cache revalidated) 3543 silly packumentCache full:https://registry.npmjs.org/color-name set size:16325 disposed:false 3544 silly placeDep node_modules/n8n/node_modules/wrap-ansi-cjs color-name@1.1.4 OK for: color-convert@2.0.1 want: ~1.1.4 3545 silly placeDep node_modules/n8n/node_modules/wrap-ansi color-convert@2.0.1 OK for: ansi-styles@4.3.0 want: ^2.0.1 3546 silly placeDep node_modules/n8n/node_modules/wrap-ansi color-name@1.1.4 OK for: color-convert@2.0.1 want: ~1.1.4 3547 silly placeDep node_modules/n8n/node_modules/yamljs sprintf-js@1.0.3 OK for: argparse@1.0.10 want: ~1.0.2 3548 silly placeDep node_modules/n8n/node_modules/yamljs minimatch@3.1.2 OK for: glob@7.2.3 want: ^3.1.1 3549 silly placeDep node_modules/n8n/node_modules/@n8n/n8n-nodes-langchain agent-base@6.0.2 OK for: https-proxy-agent@5.0.1 want: 6 3550 silly reify mark retired [ '/usr/lib/node_modules/n8n', '/usr/bin/n8n' ] 3551 silly reify moves { 3551 silly reify '/usr/lib/node_modules/n8n': '/usr/lib/node_modules/.n8n-seyU16Gs', 3551 silly reify '/usr/bin/n8n': '/usr/bin/.n8n-i29c3Ryl' 3551 silly reify } 3552 verbose stack Error: ENOTEMPTY: directory not empty, rename '/usr/lib/node_modules/n8n' -> '/usr/lib/node_modules/.n8n-seyU16Gs' 3552 verbose stack at async Object.rename (node:internal/fs/promises:784:10) 3552 verbose stack at async moveFile (/usr/lib/node_modules/npm/node_modules/@npmcli/fs/lib/move-file.js:30:5) 3552 verbose stack at async Promise.allSettled (index 0) 3552 verbose stack at async [reifyPackages] (/usr/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:325:11) 3552 verbose stack at async Arborist.reify (/usr/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:142:5) 3552 verbose stack at async Update.exec (/usr/lib/node_modules/npm/lib/commands/update.js:63:5) 3552 verbose stack at async Npm.exec (/usr/lib/node_modules/npm/lib/npm.js:207:9) 3552 verbose stack at async module.exports (/usr/lib/node_modules/npm/lib/cli/entry.js:74:5) 3553 error code ENOTEMPTY 3554 error syscall rename 3555 error path /usr/lib/node_modules/n8n 3556 error dest /usr/lib/node_modules/.n8n-seyU16Gs 3557 error errno -39 3558 error ENOTEMPTY: directory not empty, rename '/usr/lib/node_modules/n8n' -> '/usr/lib/node_modules/.n8n-seyU16Gs' 3559 silly unfinished npm timer reify 1753497974166 3560 silly unfinished npm timer reify:retireShallow 1753497988105 3561 verbose cwd /root 3562 verbose os Linux 6.8.12-11-pve 3563 verbose node v22.17.0 3564 verbose npm v10.9.2 3565 verbose exit -39 3566 verbose code -39
+```  
+  
+From ChatGPT:  
+You're hitting a common error during your n8n update:
+ENOTEMPTY: directory not empty, rename '/usr/lib/node_modules/n8n' -> '/usr/lib/node_modules/.n8n-xxxxxx'
+
+This is an npm error
+ (ENOTEMPTY) that means npm tried to move the old n8n directory out of the way but couldn't because something inside /usr/lib/node_modules/n8n is still there or in use.  
+   
+To fix this:  
+1. Stop n8n  
+  
+Make sure n8n isn't running (otherwise files may be locked).
+
+```
+pm2 stop n8n
+# or, if you're using systemd:
+systemctl stop n8n
+```
+
+2. Check for Node Processes  
+  
+Make sure no node processes are using /usr/lib/node_modules/n8n:  
+
+```
+lsof +D /usr/lib/node_modules/n8n
+```  
+
+3. Manually Remove the n8n Directory  
+
+If you're sure n8n is stopped:  
+
+```
+rm -rf /usr/lib/node_modules/n8n
+```
+  
+This deletes the old directory that npm couldn't move.  
+(Careful: this is permanent! If you're worried, back it up first.)  
+
+4. Retry the Update
+
+If this was successful, then you can safely restart n8n:  
+
+1. Start n8n Service
+
+```
+# If you use PM2 (most common for manual installs):
+pm2 start n8n
+pm2 save
+
+# If you use systemd (service):
+systemctl start n8n
+systemctl status n8n
+```
+
+2. Check That n8n Is Running
+
+```
+# PM2:
+pm2 list
+# Should see n8n status as "online"
+
+# Systemd:
+systemctl status n8n
+# Should see "active (running)"
+
+# Docker:
+#If you use Docker, just run docker ps and check your n8n container status.
+```
+
+3. Check n8n Version  
+
+In the Web UI, go to the user menu > About (or similar, depending on version).  
+
+Or, run:  
+
+`n8n --version`
